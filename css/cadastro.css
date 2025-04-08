@@ -1,0 +1,50 @@
+body {
+    background-color: #d6b27b;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url("imagens/fundo hamburguer.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .cadastro-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background-color: #f0d7b3cc;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .cadastro-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #5c3b22;
+  }
+
+  .cadastro-container input[type="text"],
+  .cadastro-container input[type="email"],
+  .cadastro-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  .cadastro-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c3b22;
+    color: #f0d7b3;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cadastro-container button:hover {
+    background-color: #3d2717;
+  }

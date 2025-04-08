@@ -23,7 +23,10 @@ header .carrinho {
   text-align: center;
 }
 
-header .cadastro a,
+header .cadastro a {
+  color: blue;
+}
+
 header .carrinho a {
   color: #f0d7b3;
   text-decoration: none;
@@ -135,7 +138,7 @@ footer {
 
 footer {
   background-color: #5c3b22;
-  padding: 140px 0;
+  padding: 160px 0;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -145,8 +148,8 @@ footer {
 
 .footer-slider {
   display: flex;
-  gap: 50px;
-  animation: slide 15s linear infinite;
+  gap: 80px;
+  animation: slide 13s linear infinite;
   width: fit-content;
   position: absolute;
   white-space: nowrap;
@@ -155,8 +158,8 @@ footer {
 }
 
 .footer-slider img {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 10px;
   object-fit: cover;
 }
