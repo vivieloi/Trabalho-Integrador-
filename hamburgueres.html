@@ -15,7 +15,7 @@
       <h2>Hambúrguer Clássico</h2>
       <p>Pão artesanal, carne 150g, queijo, alface e tomate.</p>
       <p>R$ 20,00</p>
-      <button class="add-to-cart" data-nome="Hambúrguer Clássico" data-preço="20.00">Adicionar ao carrinho</button>
+      <button onclick="adicionar('Hambúrguer Clássico', 20)">Adicionar ao carrinho</button>
     </div>
 
     <div class="burger-card">
@@ -23,7 +23,7 @@
       <h2>Hambúrguer com Bacon</h2>
       <p>Pão brioche, carne 180g, queijo cheddar, bacon crocante.</p>
       <p>R$ 28,00</p>
-      <button class="add-to-cart" data-nome="Hambúrguer com Bacon" data-preço="28.00">Adicionar ao carrinho</button>
+      <button onclick="adicionar('Hambúrguer com Bacon', 28)">Adicionar ao carrinho</button>
     </div>
 
     <div class="burger-card">
@@ -31,12 +31,19 @@
       <h2>Hambúrguer Vegano</h2>
       <p>Pão integral, hambúrguer de grão-de-bico, alface, tomate e molho especial.</p>
       <p>R$ 22,00</p>
-      <button class="add-to-cart" data-nome="Hambúrguer Vegano" data-preço="22.00">Adicionar ao carrinho</button>
+      <button onclick="adicionar('Hambúrguer Vegano', 22)">Adicionar ao carrinho</button>
     </div>
   </main>
   <div class="voltar-container">
     <a href="./index.html" class="voltar-btn">Voltar para página inicial</a>
   </div>  
-  <script src="./js/carrinho.js"></script>
+  <script>
+    function adicionar(nome, preco) {
+      let carrinho = JSON.parse(localStorage.getItem("carrinho")) // [];
+      carrinho.push({nome, preco});
+      localStorage.setItem("carrinho", JSON.stringify(carrinho));
+      alert('$(nome) adicionado ao carrinho!');
+    }
+  </script>
 </body>
 </html>

@@ -1,22 +1,44 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrinho de Compras</title>
+  <title>Carrinho - Hamburgueria</title>
   <link rel="stylesheet" href="./css/carrinho.css">
 </head>
 <body>
+
   <header>
-    <h1>Carrinho de Compras</h1>
+    <h1>Seu Carrinho</h1>
   </header>
+
   <main>
-    <div id="lista-carrinho"></div>
-    <div id="total">Total: R$ <span id="valor-total">0.00</span></div>
-    <button id="finalizar">Finalizar Pedido</button>
-    <div class="voltar-container">
-      <a href="./index.html" class="voltar-btn">Voltar para Página Inicial</a>
+    <div id="carrinho" class="carrinho-pagina">
+      <ul id="lista-carrinho"></ul>
+      <p>Total: R$ <span id="total">0.00</span></p>
+      <button id="finalizar-compra">Finalizar Compra</button>
     </div>
   </main>
-  <script src="./js/carrinho.js"></script>
-</body>
+  <script>
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) // [];
+    const lista = document.getElementById("lista-carrinho");
+    const total = document.getElementById("total");
+
+    let soma = 0;
+    carrinho.forEach(item => {
+      const div = document.createElement("div");
+      div.className = ("item");
+      div.textContent = '${item.nome} - R$ ${item.preco.toFixed(2)}';
+      lista.appendChild(div);
+      soma += item.preco;
+    });
+
+    total.textContent = 'Total: R$ ${soma.toFixed(2)}';
+
+    function finalizar-compra() {
+      alert("Compra finalizada com sucesso!");
+      localStorage.removeItem("carrinho");
+      window.location.href = "./index.html";
+    }
+  </script>
+  </body>
 </html>
